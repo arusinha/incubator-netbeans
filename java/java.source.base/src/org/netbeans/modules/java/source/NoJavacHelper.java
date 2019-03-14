@@ -66,7 +66,7 @@ public class NoJavacHelper {
                     theUnsafe.setAccessible(true);
                     Unsafe unsafe = (Unsafe) theUnsafe.get(null);
                     Class scopeClass = Class.forName("com.sun.tools.javac.code.Scope");
-                    unsafe.defineClass("com.sun.tools.javac.code.Scope$WriteableScope", classData, 0, classData.length, scopeClass.getClassLoader(), scopeClass.getProtectionDomain());
+                    //unsafe.defineClass("com.sun.tools.javac.code.Scope$WriteableScope", classData, 0, classData.length, scopeClass.getClassLoader(), scopeClass.getProtectionDomain());
                 } catch (Throwable t) {
                     //ignore...
                     Logger.getLogger(NoJavacHelper.class.getName()).log(Level.FINE, null, t);

@@ -147,26 +147,8 @@
   </target>
 
   <target name="prepare-vanilla-javac" depends="-check-vanilla-javac" unless="vanilla.javac.exists">
-    <delete dir="${nb_all}/nbbuild/build/langtools" />
-    <mkdir dir="${nb_all}/nbbuild/build/langtools" />
-    <unzip src="${nb_all}/nbbuild/external/langtools-9.zip" dest="${nb_all}/nbbuild/build/langtools">
-        <cutdirsmapper dirs="1"/>
-    </unzip>
-    <ant antfile="${nb_all}/nbbuild/build/langtools/make/build.xml" dir="${nb_all}/nbbuild/build/langtools/" target="generate-sources">
-        <property name="langtools.jdk.home" value="${java.home}" />
-    </ant>
-    <mkdir dir="${nb_all}/nbbuild/build/langtools/build/nb" />
-    <javac srcdir="${nb_all}/nbbuild/build/langtools/src/java.compiler/share/classes:${nb_all}/nbbuild/build/langtools/src/jdk.compiler/share/classes:${nb_all}/nbbuild/build/langtools/src/jdk.javadoc/share/classes:${nb_all}/nbbuild/build/langtools/src/jdk.jdeps/share/classes:${nb_all}/nbbuild/build/langtools/build/gensrc/jdk.compiler"
-           destdir="${nb_all}/nbbuild/build/langtools/build/nb"
-           excludes="**/module-info.java,com/sun/tools/javac/main/JavacToolProvider.java,com/sun/tools/jdeps/**,com/sun/tools/jdeprscan/**,com/sun/tools/javap/Main.java,jdk/javadoc/internal/tool/JavadocToolProvider.java,com/sun/tools/doclets/standard/Standard.java" />
-    <copy todir="${nb_all}/nbbuild/build/langtools/build/nb">
-        <fileset dir="${nb_all}/nbbuild/build/langtools/src/java.compiler/share/classes" includes="**/*.properties"/>
-        <fileset dir="${nb_all}/nbbuild/build/langtools/src/jdk.compiler/share/classes" includes="**/*.properties"/>
-        <fileset dir="${nb_all}/nbbuild/build/langtools/src/jdk.javadoc/share/classes" includes="**/*.properties"/>
-        <fileset dir="${nb_all}/nbbuild/build/langtools/src/jdk.jdeps/share/classes" includes="**/*.properties"/>
-    </copy>
-    <jar destfile="${nb_all}/nbbuild/external/vanilla-javac-api.jar" basedir="${nb_all}/nbbuild/build/langtools/build/nb" includes="javax/**,com/sun/source/**,com/sun/javadoc/**" />
-    <jar destfile="${nb_all}/nbbuild/external/vanilla-javac-impl.jar" basedir="${nb_all}/nbbuild/build/langtools/build/nb" excludes="javax/**,com/sun/source/**,com/sun/javadoc/**" />
+    <copy file="${nb_all}/nbbuild/external/nb-javac-9-api.jar" tofile="${nb_all}/nbbuild/external/vanilla-javac-api.jar"/>
+    <copy file="${nb_all}/nbbuild/external/nb-javac-9-impl.jar" tofile="${nb_all}/nbbuild/external/vanilla-javac-impl.jar"/>
   </target>
 
   <target name="init-module-list" depends="bootstrap,init-tasks,prepare-vanilla-javac">

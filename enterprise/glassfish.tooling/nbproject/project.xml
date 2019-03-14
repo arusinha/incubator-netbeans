@@ -81,6 +81,10 @@
                 <package>org.netbeans.modules.glassfish.tooling.logging</package>
                 <package>org.netbeans.modules.glassfish.tooling.utils</package>
             </friend-packages>
+            <class-path-extension>
+                <binary-origin>external/jaxb-api-2.3.1.jar</binary-origin>
+                <runtime-relative-path>ext/jaxb/api/jaxb-api-2.3.1.jar</runtime-relative-path>
+            </class-path-extension>
         </data>
     </configuration>
 </project>

@@ -335,6 +335,10 @@
                 <package>org.netbeans.modules.websvc.manager.spi</package>
                 <package>org.netbeans.modules.websvc.manager.util</package>
             </friend-packages>
+            <class-path-extension>
+                <binary-origin>external/jaxb-api-2.3.1.jar</binary-origin>
+                <runtime-relative-path>ext/jaxb/api/jaxb-api-2.3.1.jar</runtime-relative-path>
+            </class-path-extension>
         </data>
     </configuration>
 </project>

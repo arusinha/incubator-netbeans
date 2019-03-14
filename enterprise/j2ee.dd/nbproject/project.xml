@@ -248,6 +248,10 @@
                 <package>org.netbeans.modules.j2ee.dd.spi.ejb</package>
                 <package>org.netbeans.modules.j2ee.dd.spi.web</package>
             </public-packages>
+	    <class-path-extension>
+                 <runtime-relative-path>ext/javax.annotation-api-1.2.jar</runtime-relative-path>
+                <binary-origin>external/javax.annotation-api-1.2.jar</binary-origin>
+            </class-path-extension>
         </data>
     </configuration>
 </project>
