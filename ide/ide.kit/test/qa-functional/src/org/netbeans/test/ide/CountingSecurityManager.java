@@ -112,7 +112,7 @@ final class CountingSecurityManager extends SecurityManager implements Callable<
 
     static void assertReflection(int maxCount, String whitelist) {
         System.setProperty("counting.reflection.whitelist", whitelist);
-        System.getSecurityManager().checkMemberAccess(null, maxCount);
+        //System.getSecurityManager().checkMemberAccess(null, maxCount);
         System.getProperties().remove("counting.reflection.whitelist");
     }
 
@@ -243,7 +243,7 @@ final class CountingSecurityManager extends SecurityManager implements Callable<
     }
 
     private final Map<Class,Who> members = Collections.synchronizedMap(new HashMap<Class, Who>());
-    @Override
+
     public void checkMemberAccess(Class<?> clazz, int which) {
         if (clazz == null) {
             assertMembers(which);

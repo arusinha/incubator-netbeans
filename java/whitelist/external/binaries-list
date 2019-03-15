@@ -14,16 +14,4 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
-
-javac.compilerargs=-Xlint:unchecked
-javac.source=1.6
-requires.nb.javac=true
-
-test.unit.cp.extra=\
-    ${j2ee.persistence.dir}/modules/ext/eclipselink/org.eclipse.persistence.core-2.5.2.jar:\
-    ${j2ee.persistence.dir}/modules/ext/eclipselink/org.eclipse.persistence.asm-2.5.2.jar:\
-    ${j2ee.persistence.dir}/modules/ext/eclipselink/org.eclipse.persistence.antlr-2.5.2.jar:\
-    ${j2ee.persistence.dir}/modules/ext/eclipselink/org.eclipse.persistence.jpa-2.5.2.jar:\
-    ${j2ee.persistence.dir}/modules/ext/eclipselink/org.eclipse.persistence.jpa.jpql-2.5.2.jar:\
-    ${j2ee.persistence.dir}/modules/ext/eclipselink/javax.persistence-2.1.0.jar:\
-    ${nb-all}/java/maven.indexer/external/javax.annotation-api-1.2.jar
+50EFCE570B9382F602AB67D09A300382806E254E org.glassfish.corba:glassfish-corba-omgapi:4.2.0
