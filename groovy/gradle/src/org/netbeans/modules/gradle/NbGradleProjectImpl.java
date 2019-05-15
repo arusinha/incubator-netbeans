@@ -54,6 +54,7 @@ import java.util.logging.Logger;
 import org.netbeans.api.annotations.common.NonNull;
 import org.netbeans.api.annotations.common.SuppressWarnings;
 import org.netbeans.modules.gradle.api.GradleBaseProject;
+import org.netbeans.modules.gradle.queries.GradleCompilerOptionsQueryImpl;
 import org.netbeans.spi.project.CacheDirectoryProvider;
 import org.netbeans.spi.project.support.LookupProviderSupport;
 import org.netbeans.spi.project.ui.ProjectOpenedHook;
@@ -169,7 +170,8 @@ public final class NbGradleProjectImpl implements Project {
                 UILookupMergerSupport.createProjectProblemsProviderMerger(),
                 UILookupMergerSupport.createRecommendedTemplatesMerger(),
                 UILookupMergerSupport.createPrivilegedTemplatesMerger(),
-                state
+                state,
+                new GradleCompilerOptionsQueryImpl(this)
         );
     }
 
