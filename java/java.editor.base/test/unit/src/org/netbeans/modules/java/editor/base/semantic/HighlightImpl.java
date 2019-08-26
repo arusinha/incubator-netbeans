@@ -144,6 +144,9 @@ public final class HighlightImpl {
         ColoringAttributes.MARK_OCCURRENCES,
 
         ColoringAttributes.KEYWORD,
+
+        ColoringAttributes.UNINDENTED_TEXT_BLOCK,
+
     });
  
     public static HighlightImpl parse(StyledDocument doc, String line) throws ParseException, BadLocationException {
