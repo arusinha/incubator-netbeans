@@ -101,6 +101,8 @@ public class TreeLoader extends LazyTreeLoader {
     private static final ThreadLocal<Boolean> isTreeLoading = new ThreadLocal<Boolean>();
 
     public static void preRegister(final Context context, final ClasspathInfo cpInfo, final boolean detached) {
+   LazyTreeLoader instance = context.get(lazyTreeLoaderKey);
+        if (instance == null)
         context.put(lazyTreeLoaderKey, new TreeLoader(context, cpInfo, detached));
     }
     
